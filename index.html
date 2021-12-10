@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Typescript Project</title>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="row text-center text-white pb-4">
+            <div class="col pt-3 bg-danger header-font">
+                <h1 style="font-size: 4rem">Christmas Card Generator</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row p-4 d-flex justify-content-around">
+                <video
+                    id="background-video"
+                    autoplay
+                    loop
+                    muted
+                    poster="https://assets.codepen.io/6093409/river.jpg"
+                >
+                    <source
+                        src="/pexels-james-cheney-6933752.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <div class="col-lg-6 col-sm-12 mb-3">
+                    <div class="card">
+                        <p class="card-header">
+                            Typescript: Christmas card generator
+                        </p>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <form>
+                                            <div class="form-group">
+                                                <lable for="inputFrom"
+                                                    >From</lable
+                                                >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    onchange="changeFrom()"
+                                                    type="text"
+                                                    id="inputFrom"
+                                                    placeholder="Name from sender"
+                                                />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <lable for="inputFrom">To</lable>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                onchange="changeTo()"
+                                                type="text"
+                                                id="inputTo"
+                                                placeholder="Name of receiver"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputDescription">Text</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        onchange="changeDescription()"
+                                        type="text"
+                                        id="inputDescription"
+                                        placeholder="Write your descroption here"
+                                    />
+                                </div>
+                                <hr />
+                                <div class="input-group mb-3">
+                                    <select
+                                        class="custom-select"
+                                        id="inputImg"
+                                        onchange="changeImg()"
+                                    >
+                                        <option
+                                            selected
+                                            value="https://images.unsplash.com/photo-1451772741724-d20990422508?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                        >
+                                            Card image
+                                        </option>
+                                        <option
+                                            value="https://images.unsplash.com/photo-1513297887119-d46091b24bfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                                        >
+                                            Christmas trees
+                                        </option>
+                                        <option
+                                            value="https://images.unsplash.com/photo-1481481525014-91e77115eace?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1684&q=80"
+                                        >
+                                            Santa claus
+                                        </option>
+                                        <option
+                                            value="https://images.unsplash.com/photo-1516035645781-9f126e774e9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                                        >
+                                            Snowy weather
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select
+                                        class="custom-select"
+                                        id="inputColor"
+                                        onchange="changeBorder()"
+                                    >
+                                        <option selected>Card color</option>
+                                        <option
+                                            value="border border-3 border-danger"
+                                        >
+                                            Red
+                                        </option>
+                                        <option
+                                            value="border border-3 border-primary"
+                                        >
+                                            Blue
+                                        </option>
+                                        <option
+                                            value="border border-3 border-success"
+                                        >
+                                            Green
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <select
+                                        class="custom-select"
+                                        id="inputFont"
+                                        onchange="changeFont()"
+                                    >
+                                        <option selected>Font type</option>
+                                        <option value="Impact">Impact</option>
+                                        <option value="Franklin Gothic">
+                                            Franklin Gothic Medium
+                                        </option>
+                                        <option
+                                            value="Lucida Grande"
+                                            style="font-family: 'Lucida Grande'"
+                                        >
+                                            Lucida Grande
+                                        </option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="card" style="width: 100%">
+                        <div
+                            id="xmasCard"
+                            class=""
+                            style="
+                                color: white;
+                                font-family: 'Courier New', Courier, monospace;
+                            "
+                        >
+                            <img
+                                id="outputImg"
+                                style="height: 400px; object-fit: cover"
+                                class="card-img-top"
+                                src="https://images.unsplash.com/photo-1451772741724-d20990422508?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                alt="Card image cap"
+                            />
+                            <div class="card-img-overlay">
+                                <div class="card-body bg-overlay">
+                                    <h2 class="font-weight-bold">
+                                        Merry Christmas!
+                                    </h2>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 id="outputFrom"></h5>
+                                        </div>
+                                        <div class="col">
+                                            <h5 id="outputTo"></h5>
+                                        </div>
+                                    </div>
+                                    <p class="card-text" id="outputDescription">
+                                        This Christmas card is packed full of
+                                        virus-free hugs and kisses just for you!
+                                        We hope you have a very Merry Christmas
+                                        and that we can see you again soon.
+                                        Until then, cheers to you from afar for
+                                        your good health and happiness!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary mt-4"
+                        >Print this card</a
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
